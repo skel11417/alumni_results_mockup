@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" class="ng-scope" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta charset="utf-8">
+    <!-- base href="https://owdb-prod.azurewebsites.net/" -->
+    <title>Home - OWLC</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://owdb-prod.azurewebsites.net/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="index_files/base.css">
+    <link rel="stylesheet" type="text/css" href="index_files/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="index_files/spinner.css">
+    <link rel="stylesheet" type="text/css" href="index_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="index_files/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="index_files/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="index_files/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="index_files/flags.css">
+    <link rel="stylesheet" type="text/css" href="index_files/loader.css">
+    <link rel="stylesheet" type="text/css" href="index_files/Site.css">
+
+    <script type="text/javascript" src="index_files/jquery-3.js"></script>
+    <script type="text/javascript" src="index_files/jquery-ui-1.js"></script>
+    <script type="text/javascript" src="index_files/jquery_002.js"></script>
+    <script type="text/javascript" src="index_files/jquery_003.js"></script>
+
+    <script type="text/javascript" src="index_files/angular.js"></script>
+    <script type="text/javascript" src="index_files/angular-sanitize.js"></script>
+    <script type="text/javascript" src="index_files/ui-bootstrap-tpls.js"></script>
+
+    <script type="text/javascript" src="index_files/bootstrap.js"></script>
+
+    
+
+</head>
+<body stop-url-rewrite="">
+
+    <script type="text/javascript" src="index_files/loader-module.js"></script>
+    <script type="text/javascript" src="index_files/logJSError-module.js"></script>
+    <script type="text/javascript" src="index_files/_MainLayout.js"></script>
+    <script type="text/javascript" src="index_files/SearchCtrl.js"></script>
+    
+    
+    
+
+
+<script src="index_files/jquery.js"></script>
+<script src="index_files/base64.js"></script>
+
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="row-fluid">
+            <div class="span3">
+                <a class="brand" href="#" target="_self">
+                    <img src="index_files/logo.png" alt="OWLC">
+                </a>
+            </div>
+            <div class="span2">
+                <div class="pull-left">
+                        <p class="header-title" style="padding-right:8px;" title="1.1.33 (Aug-17-2017)">Version&nbsp;1.1.33</p>
+                </div>
+            </div>
+            <div class="span4">
+</div>
+
+
+<div class="span2 btn-group pull-right" dropdown="">
+    <button type="button" class="btn dropdown-toggle pull-left" data-toggle="dropdown">
+        User Name
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="https://owdb-prod.azurewebsites.net/Admin/ChangePwd" target="_self">Change Password</a></li>
+        <li class="divider"></li>
+        <li><a href="https://owdb-prod.azurewebsites.net/Account/Logout" target="_self">Logout</a></li>
+    </ul>
+</div>
+
+        </div>
+        <div class="row-fluid main-menu">
+<ul id="menu" class="nav nav-pills">
+<li class="active">
+
+    <a href="#" title="Home" target="_self">Home</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Applications" target="_self">Applications</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="PODs" target="_self">PODs</a>
+
+</li>
+
+<li>
+
+    <a href="result_search.htm" title="Results" target="_self">Results</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Programs" target="_self">Programs</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="People" target="_self">People</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Organizations" target="_self">Organizations</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Host Families" target="_self">Host Families</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Grants" target="_self">Grants</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Documents" target="_self">Documents</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Reports" target="_self">Reports</a>
+
+</li>
+
+<li>
+
+    <a href="#" title="Admin" target="_self">Admin</a>
+
+</li>
+
+</ul></div>
+    </div>
+</header>
+
+
+<div class="content ng-scope" ng-controller="SessionRenewCtrl" ng-mouseup="renew()">
+    <div class="container-fluid">
+        <div id="loaderDiv" loader="" style="display: none;">
+            <img src="index_files/ajax-loader.gif" class="ajax-loader">
+        </div>
+        <div class="inner-container-fluid">
+            
+<ul class="breadcrumb">
+<li>
+
+
+    <span>Home</span>
+
+</li>
+
+</ul>
+
+            
+
+<div id="dashboard" ng-controller="HomeDashboardCtrl" ng-init="init('/Home/InitHomeDashboard')" class="ng-scope">
+    <div class="pull-left col-half">
+        <div class="row-fluid">
+            <div class="row-fluid clearfix content-nav-header text-left">
+                <span>Applications/Nominations</span>
+            </div>
+            <div class="row-fluid" ng-show="hasPermission(['DBA','CreateUpdateDeleteApplications'])">
+                <a href="https://owdb-prod.azurewebsites.net/Application/New" target="_self">Create a new application/nomination</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Application" target="_self">Search applications/nominations</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Reports?module=Applications%2CCrosscutting" target="_self">Reports</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Group" target="_self">Manage Customized Lists/Groups</a>
+            </div>
+
+            <div class="row-fluid">&nbsp;</div>
+        </div>
+        <div class="row-fluid">
+            <div class="row-fluid clearfix content-nav-header text-left">
+                <a href="https://owdb-prod.azurewebsites.net/POD" target="_self">Programs and PODs</a>
+                <span></span>
+            </div>
+            <div class="row-fluid" ng-show="hasPermission(['DBA','CreateUpdateDeletePODs'])">
+                <a href="https://owdb-prod.azurewebsites.net/POD/Detail" target="_self">Add a new POD</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/POD" target="_self">Search PODs</a>
+            </div>
+            <div class="row-fluid">&nbsp;</div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Program" target="_self">Manage Programs</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Program/Themes" target="_self">Manage Themes</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/HostFamilies" target="_self">Manage Host Families</a>
+            </div>
+            <div class="row-fluid">&nbsp;</div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Reports?module=PODs%2CCrosscutting" target="_self">Reports</a>
+            </div>
+            <div class="row-fluid">&nbsp;</div>
+        </div>
+
+    </div>
+    <div class="pull-right col-half">
+        <div class="row-fluid">
+            <div class="row-fluid clearfix content-nav-header text-left">
+                <span>People &amp; Organizations</span>            
+            </div>
+            <div class="row-fluid" ng-show="hasPermission(['DBA','CreateUpdateDeletePeopleAndOrganizations'])">
+                <a href="https://owdb-prod.azurewebsites.net/People/Detail" target="_self">Add a person</a>            
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/People" target="_self">Search people</a>
+            </div>
+            <div class="row-fluid" ng-show="hasPermission(['DBA','CreateUpdateDeletePeopleAndOrganizations'])">
+                <a href="https://owdb-prod.azurewebsites.net/Organization/Detail" target="_self">Add an organization</a>      
+                <a href="#" target="_self"></a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Organization" target="_self">Search organizations</a>
+            </div>
+            <div class="row-fluid">&nbsp;</div>
+        </div>
+        <div class="row-fluid ng-hide" ng-show="hasPermission(['DBA','ViewGrantsData','CreateUpdateDeleteGrants'])">
+            <div class="row-fluid clearfix content-nav-header text-left">
+                <span>Grants</span>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Grants" target="_self">Manage Grants</a>
+            </div>
+            <div class="row-fluid">
+                <a href="https://owdb-prod.azurewebsites.net/Reports?module=Grants%2CCrosscutting" target="_self">Reports</a>
+            </div>
+            <div class="row-fluid">&nbsp;</div>
+        </div>
+        <div class="row-fluid">
+            <div class="row-fluid clearfix content-nav-header text-left">
+                <span>Miscellaneous</span>
+            </div>
+            <div class="row-fluid ng-hide" ng-show="hasPermission(['DBA','ManageLookups'])">
+                <a href="https://owdb-prod.azurewebsites.net/Admin/Lookups" target="_self">System Lookups</a>
+            </div>
+            <div class="row-fluid ng-hide" ng-show="hasPermission(['DBA','UnlockUserAccounts','CreateUpdateDeleteUsersAndRoles'])">
+                <a href="https://owdb-prod.azurewebsites.net/Admin/Users" target="_self">Manage Users</a>
+            </div>
+            <div class="row-fluid ng-hide" ng-show="hasPermission(['DBA','CreateUpdateDeleteUsersAndRoles'])">
+                <a href="https://owdb-prod.azurewebsites.net/Admin/Roles" target="_self">Manage Roles</a>
+            </div>
+            <div class="row-fluid">&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function HomeDashboardCtrl($scope, $http) {
+        
+        $scope.init = function (initUrl) {
+            $http.post(initUrl, {}).then(function (response) {
+                var data = response.data;
+                $scope.userPermissions = data.UserPermissions;
+            });
+        };
+        
+        $scope.hasPermission = function (keys) {
+            if (angular.isUndefined($scope.userPermissions)) return false;
+            var ret = false;
+            angular.forEach(keys, function (key) {
+                if (!ret) {
+                    ret = $scope.userPermissions[key];
+                }
+            });
+            return ret;
+        };
+    }
+
+    app.controller('HomeDashboardCtrl', HomeDashboardCtrl);
+
+</script>
+
+            <div class="bottom-container-fluid"></div>
+        </div>
+    </div>
+</div>
+<div ng-controller="SessionCtrl" class="hidden ng-scope"></div>
+
+<script type="text/ng-template" id="sessionModal.html">
+    <div class="modal-header" id="modalList" dragablep>
+        <div class="row-fluid clearfix content-nav">
+            <div class="ui-accordion-header pull-left">Alert</div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <span ng-hide="redirecting">Your session will expire in {{expire}}. Press 'continue' or you will be logged out.</span>
+        <span ng-show="redirecting">Your session has expired and you will be logged out.</span>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="redirecting" class="btn btn-primary" ng-click="ok()">Continue</button>
+    </div>
+</script>
+
+
+<script type="text/javascript">
+
+    var SessionCtrl = function ($rootScope, $scope, $timeout, $uibModal, $log) {
+        $scope.timeout = 0;
+
+        $scope.$on('sessionRenew', function (args) {
+            $scope.setTimeout(44);
+        });
+
+        $scope.onTimeout = function () {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'sessionModal.html',
+                controller: SessionPopupCtrl,
+                keyboard: false,
+                backdrop: 'static'
+            });
+
+            modalInstance.result.then(function () {
+                $scope.setTimeout(44);
+            });
+        };
+
+        $scope.setTimeout = function (timeout) {
+            $scope.timeout = (timeout - 1) * 60000; //popup will show
+            var showPopup = $timeout($scope.onTimeout, $scope.timeout); //set delay for popup
+        };
+
+        $scope.setTimeout(44);
+    };
+
+    app.controller('SessionCtrl', SessionCtrl);
+
+    var SessionPopupCtrl = function ($rootScope, $scope, $timeout, $uibModalInstance, $log, $http, $window) {
+        $scope.expire = 60;
+        $scope.redirecting = false;
+
+        $scope.onTimeout = function () {
+            if ($scope.expire == 0) {
+                $scope.cancel();
+            }
+
+            $scope.expire--;
+            tick = $timeout($scope.onTimeout, 1000);
+        };
+
+        var tick = $timeout($scope.onTimeout, 1000);
+
+        $scope.ok = function () {
+            $timeout.cancel(tick);
+            $scope.expire = 60;
+            //ajax to renew session goes here
+            var url = '/Session/Renew';
+
+            $http.post(url, null).then(
+                function (data, status) {
+                    //$log.info(data);
+                    $rootScope.sessionHasExpired = false;
+                }
+                , function (data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                    $scope.cancel();
+                }
+            );
+
+            $uibModalInstance.close("yes");
+
+        };
+
+        $scope.cancel = function () {
+            $timeout.cancel(tick);
+            $scope.redirecting = true;
+            //direct logout
+            var url = '/Account/Logout';
+            $rootScope.sessionHasExpired = true;
+            $window.location.href = url;
+        };
+    };
+
+    app.controller('SessionPopupCtrl', SessionPopupCtrl);
+
+</script>
+
+<script type="text/javascript" src="index_files/LanguageControl.js"></script>
+
+<script language="javascript">
+    $(document).ready(function () {
+        //Reports should always have href="/Reports"
+        $("#menu a[title='Reports']").attr("href", "/Reports");
+    });
+
+    var ConfirmDialogController = function ($scope, $http, $uibModalInstance, params) {
+
+        $scope.params = params;
+
+        $scope.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
+        $scope.ok = function (result) {
+            $uibModalInstance.close(result);
+        };
+    };
+
+    app.controller('ConfirmDialogController', ConfirmDialogController);
+
+    var SessionRenewCtrl = function ($scope, $timeout, $log, $http, $filter) {
+
+        $scope.needToReload = false;
+
+        $scope.onTimeout = function () {
+            $scope.needToReload = true;
+            $scope.tick = $timeout($scope.onTimeout, 120000);
+        };
+
+        $scope.tick = $timeout($scope.onTimeout, 120000); //every 2 minutes set to true
+
+        $scope.renew = function () {
+
+            if (!$scope.needToReload)
+                return;
+
+            var url = '/Session/Renew';
+
+            $http.post(url, null).then(
+                function (data, status) {
+                    var args = { status: status };
+                    $scope.$emit('sessionRenew', args);
+                    $scope.needToReload = false;
+                }
+                , function (data, status) {
+                    //$log.info(status);
+                }
+            );
+        };
+
+        $scope.processDate = function (dt) {
+            return $filter('date')(dt, 'yyyy-MM-dd');
+        };
+
+    };
+
+    app.controller('SessionRenewCtrl', SessionRenewCtrl);
+
+</script>
+
+<footer class="modal-footer">
+    <div class="row-fluid text-center ft1">© Copyright 2013. Open World Leadership Center. All rights reserved.</div>
+    <div class="row-fluid text-center ft2">System developed by <a target="_blank" href="http://pintl.net/">Partners International</a></div>
+</footer>
+
+
+
+
+
+
+</body></html>
