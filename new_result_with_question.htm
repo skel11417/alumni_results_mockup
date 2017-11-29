@@ -3,7 +3,7 @@
     
     <meta charset="utf-8">
     <!-- base href="https://owdb-prod.azurewebsites.net/" -->
-    <title>Edit Result - OWLC</title>
+    <title>New Result - OWLC</title>
     <meta name="viewport" content="width=device-width">
 
     <link href="https://owdb-prod.azurewebsites.net/favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -177,7 +177,7 @@
 <span class="divider">&gt;</span>
 </li>
   <li>
-   Edit Result
+   New Result
 </li>
 
 </ul>
@@ -187,7 +187,7 @@
 
 <div ng-controller="SearchCtrl as SearchCtrl" ng-init="init({&quot;surl&quot;:&quot;/Facilitator/Search&quot;,&quot;durl&quot;:&quot;/Facilitator/Detail&quot;,&quot;iurl&quot;:&quot;/Facilitator/Init&quot;,&quot;key&quot;:&quot;FacilitatorSearch&quot;,&quot;format&quot;:&quot;{\&quot;ApplicantName\&quot;:2,\&quot;BirthDate\&quot;:2,\&quot;Country\&quot;:2,\&quot;State\&quot;:2,\&quot;City\&quot;:2,\&quot;NominationStatus\&quot;:2,\&quot;Nominator\&quot;:3,\&quot;NominationId\&quot;:2,\&quot;NominationDate\&quot;:2}&quot;,&quot;isCollapsed&quot;:false})" class="ng-scope">
     <div class="row-fluid clearfix content-nav">
-        <div class="ui-accordion-header pull-left">Edit Result</div>
+        <div class="ui-accordion-header pull-left">New Result</div>
         <div class="pull-right flags-block text-right">
             
 <div ng-controller="LanguageCtrl" ng-init="init({&quot;hideLanguageBar&quot;:false})" class="ng-scope">
@@ -215,7 +215,7 @@
 <div class="form-group pull-left">
     <label for="inputFirstName" class="control-label">Result Title:</label>
     <div>
-        <input id="inputFirstName" class="ng-pristine ng-untouched ng-valid ng-empty" type="text" value="Gloves Come off in Fight against Mysophobia">
+        <input id="inputFirstName" ng-model="searchData.FirstName" class="ng-pristine ng-untouched ng-valid ng-empty" type="text">
     </div>
 </div>
 
@@ -230,7 +230,7 @@
     <label for="inputPhoneFax" class="control-label">Result Date:</label>
 
         <div class="inline-div">
-    <input  is-open="dateFromOpened" value="05-07-2015" id="inputNominationDateFrom" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-date" type="text">
+    <input uib-datepicker-popup="" ng-model="searchData.DateFrom" is-open="dateFromOpened" max="searchData.DateTo" id="inputNominationDateFrom" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-date" type="text">
     <img alt="" src="Facilitator%20Search%20-%20OWLC_files/calendarIcon.png" ng-click="dateFromOpened=true" style="margin-left: -34px; margin-top: 1px;" class="hand">
 </div>
 
@@ -245,14 +245,13 @@
 <div class="form-group">
     <label for="inputAffiliation" class="control-label">Narrative:</label>
     <div>
-      <textarea rows="10" cols="70">Aleksandra Aleksandrovna wrote an article about her experience on the Open World program. Her delegation learned about the activities of the health care system in Baltimore, specifically in the sphere of combatting Mysophobia. Upon her return to her hometown of Krasnokyzyl, she organized a presentation for her colleagues at the Krasnokyzyl Regional State Hospital sponsored by Pepsi. Once a suitably sterilized environment can be agreed upon, she plans to hold a meeting with a local NGO supporting patients suffering from Mysophobia to discuss opportunities for collaboration.
-	</textarea>
+      <textarea rows="10" cols="70"></textarea>
     </div>
 </div>
  <div class="form-group pull-left">
     <label for="inputFirstName" class="control-label">Link:</label>
     <div>
-        <input id="inputFirstName" class="ng-pristine ng-untouched ng-valid ng-empty" type="text" value="http://www.ukrweekly.com/uwwp/journalists-from-ukraine-learn-about-the-fight-against-fake-news-in-chicago/"> 
+        <input id="inputFirstName" ng-model="searchData.FirstName" class="ng-pristine ng-untouched ng-valid ng-empty" type="text"> 
     </div>
 </div>
   <div class="form-group pul-left">
@@ -269,16 +268,15 @@
         <div class="table-responsive">
   <table class="table">
     <tr><td><input type="checkbox"> Project</td>
-      <td><input type="checkbox" checked> Multiplier</td>
+      <td><input type="checkbox"> Multiplier</td>
       <td><input type="checkbox"> Professional Advancement</td>
-      <td><input type="checkbox" checked> Press</td></tr>
+      <td><input type="checkbox"> Press</td></tr>
     
-      <tr><td><input type="checkbox" checked> Potential Project</td>
+      <tr><td><input type="checkbox"> Potential Project</td>
       <td><input type="checkbox"> Potential Multiplier</td>
       <td><input type="checkbox"> Potential Professional Advancement</td>
       <td><input type="checkbox"> Potential Press</td></tr>
     <tr>
-      <td><font color="#FFFFFF">-</font></td>
       <td><font color="#FFFFFF">-</font></td>
       <td><font color="#FFFFFF">-</font></td>
       <td><font color="#FFFFFF">-</font></td>
@@ -297,22 +295,36 @@
     </div>
     </div>
      <div class="clearfix"></div>
+<!-- Follow up -->
       <div class="row-fluid">
         <div class="row-fluid clearfix content-nav-header text-left">
             <span>Follow Up</span><span class="pull-right export-icons"></span>
+        <div class="row-fluid clearfix content-nav text-left">
+            <div class="pull-left">
+                <a class="btn btn-small pull-left text-center" href="new_result_with_question.htm">
+                    <font font-weight="normal" color="black">Add Follow-up Question</font>
+                    <img title="Add" alt="" src="pod_detail_files/add-icon.png">
+                </a>
+</div>
+</div>
+
+
+
+
+
         </div>  
     </div>
    <div class="clearfix"></div>
   <div class="form-group">
     <label for="inputAffiliation" class="control-label">Follow-up Question:</label>
     <div>
-      <textarea>Is this really important?</textarea>
+      <textarea></textarea>
     </div>
 </div>
 <div class="form-group pull-left">
     <label for="inputPhoneFax" class="control-label">Follow-up Alarm:</label>
         <div class="inline-div">
-    <input uib-datepicker-popup="" value="1/20/2018" id="inputNominationDateFrom" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-date" type="text">
+    <input uib-datepicker-popup="" ng-model="searchData.DateFrom" is-open="dateFromOpened" max="searchData.DateTo" id="inputNominationDateFrom" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-date" type="text">
     <img alt="" src="Facilitator%20Search%20-%20OWLC_files/calendarIcon.png" ng-click="dateFromOpened=true" style="margin-left: -34px; margin-top: 1px;" class="hand">
 </div>
 </div>
@@ -320,7 +332,7 @@
  <div class="form-group">
     <label for="inputAffiliation" class="control-label">Follow-up note:</label>
     <div>
-      <textarea>Find out results of meeting with local NGO</textarea>
+      <textarea></textarea>
     </div>
 </div>
   
@@ -329,7 +341,7 @@
     <div class="row-fluid">
         <div class="row-fluid clearfix content-nav text-left">
             <div class="pull-left">
-                <a class="btn btn-small pull-left text-center" ng-click="addParticipant()">
+                <a class="btn btn-small pull-left text-center" href="new_link_with_question.htm">
                     Add Link
                     <img title="Add" alt="" src="pod_detail_files/add-icon.png">
                 </a>
@@ -346,82 +358,10 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- ngRepeat: participant in model.Participants --><tr class="hand ng-scope tr-selected">
-                    <td class="ng-binding">Alexandrova, Alexandra</td>
-                    <td class="ng-binding">Delegate</td>
-                    <td class="ng-binding">Apr-08-2014</td>
-                    <td class="ng-binding">Baltimore, MD</td>
-                    <td class="ng-binding">Completed</td>
-                </tr><!-- end ngRepeat: participant in model.Participants --><tr class="hand ng-scope" >
-                    <td class="ng-binding">Teitin, Vasily</td>
-                    <td class="ng-binding">Facilitator</td>
-                    <td class="ng-binding">Apr-08-2014</td>
-                    <td class="ng-binding">Baltimore, MD</td>
-                    <td class="ng-binding">Completed</td>
-                </tr><!-- end ngRepeat: participant in model.Participants --><tr class="hand ng-scope">
-                    <td class="ng-binding">Schmoe, Joe</td>
-                    <td class="ng-binding">Host Leader</td>
-                    <td class="ng-binding">Apr-08-2014</td>
-                    <td class="ng-binding">Baltimore, MD</td>
-                    <td class="ng-binding">Completed</td>
-                </tr><!-- end ngRepeat: participant in model.Participants -->
+
             </tbody>
         </table>
-        <div  class="">
-            <div class="row-fluid content-nav-header">
-                <div class="pull-left"><span class="ng-binding">Participant Detail Aleksandrova, Aleksandra</span></div>
-                <div class="pull-right" style="padding-right:8px;">
-                    
-                    <a class="hand btn-link" href="https://owdb-prod.azurewebsites.net/Application/Detail/14038468" ng-href="#" target="_blank" ng-show="participantSelected.ApplicationId">
-                        <img class="bigger-image-icon" title="Open delegate's Application Detail Page" alt="Open delegate's Application Detail Page" src="pod_detail_files/arrow-right-blue.png">
-                    </a>
-                    
-                    <a class="hand btn-link ng-hide" href="https://owdb-prod.azurewebsites.net/People/Detail/62738" ng-href="#" target="_blank" ng-show="participantSelected.ApplicationId == null">
-                        <img class="bigger-image-icon" title="Open participant's Person Detail Page" alt="Open participant's Person Detail Page" src="pod_detail_files/arrow-right-green.png">
-                    </a>
-                    
-                </div>
-            </div>
-
-
-            <div class="form-group pull-left">
-                <label class="control-label">Name:</label>
-                <div>
-                    <input value="Aleksandrova, Aleksandra" type="text">
-                   
-                </div>
-            </div>
-                      <div class="form-group pull-left">
-                <label class="control-label" for="inputParticipantType">Link Type:</label>
-                <div>
-                    <select class="ng-pristine ng-untouched ng-valid ng-not-empty"><option label="Delegate" value="number:183">Delegate</option><option label="Delegate" value="number:184">Facilitator</option><option label="Delegate-Cost-Share" value="number:191">Host Leader</option><option label="Observer" value="number:192">Host Family</option></select>
-                </div>
-            </div>
-    
-	<div class="form-group pull-left">
-		<label class="control-label">Attach to entire POD? </label>
-		<div>
-			<input type="checkbox">
-		</div>
-	</div>
-
-        </div>
-    </div>
-
-
-
-    <div class="row-fluid clearfix content-nav text-right">
-        <div class="pull-right">
-            <a ng-disabled="load" class="btn btn-small hand" ng-click="save()">
-                Save
-                <img title="Save changes" class="hand" alt="Accept" src="pod_detail_files/accept-icon.png">
-            </a>
-            <a ng-disabled="load" class="btn btn-small hand" ng-click="cancel()">
-                Cancel
-                <img title="Cancel changes" class="hand" alt="Accept" src="pod_detail_files/reject-icon.PNG">
-            </a>
-        </div>
-    </div>
+        
   
         </form>
 
