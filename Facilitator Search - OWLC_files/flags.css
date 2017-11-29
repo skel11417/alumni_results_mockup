@@ -1,0 +1,42 @@
+﻿.flag
+{
+    background-image: url("images/flags.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 1px 0px 0px 0px;
+    vertical-align: text-top;
+    border: 2px solid #F5F5F5;
+}
+    .flag.flag-lg
+    {
+        height: 28px;
+        line-height: 28px;
+        width: 47px;
+    }
+    .flag.flag-sm
+    {
+        height: 20px;
+        line-height: 20px;
+        width: 32px;
+    }
+    .flag.active
+    {
+        border: 2px solid #95B3D7;
+    }
+    .flag.flag-US-lg
+    {
+        background-position: -33px -2588px;
+    }
+    .flag.flag-RU-lg
+    {
+        background-position: -207px -1960px;
+    }
+
+    .flag.flag-US-sm
+    {
+        background-position: -40px -2631px;
+    }
+    .flag.flag-RU-sm
+    {
+        background-position: -215px -2003px;
+    }
